@@ -33,7 +33,7 @@
   [f map]
   (reduce-kv (fn [m k v]
                (assoc m k (f v)))
-             {}
+             (if (sorted? map) (sorted-map) {})
              map))
 
 ;;;; PlaceholderText type
